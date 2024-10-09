@@ -1,0 +1,66 @@
+@charset "UTF-8";
+
+/*===========================
+ 応援企画（PR）
+============================ */
+.is-home__useful .ico:before { /* アイコン 基本設定 */
+  position: absolute;
+  top: 0;
+  right: 25px;
+  width: 70px;
+  height: 53px;
+  padding-top: 16px;
+  color: #ff8b28;
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-align: center;
+  background: url("../img/common/ico-pr-1.png") no-repeat;
+  background-size: 100% auto;
+  z-index: 11;
+  display: none;
+}
+
+.is-home__useful #num2:before { 
+  display: block;
+  content: 'クーポン';
+}
+
+.is-home__useful #num1:before { 
+  display: block;
+  content: 'PC企画';
+}
+
+
+/*===========================
+ プレゼント＆クーポン
+============================ */
+.is-home__present .ico-new {
+  position: absolute;
+  top: 0;
+  right: 20px;
+  width: 90px;
+  height: 102px;
+  background: url("../img/common/icon-new-1.png") no-repeat;
+  background-size: 100% auto;
+  z-index: 11;
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .is-home__present .ico-new {
+    right: 10px;
+    width: 60px;
+    height: 68px;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .is-home__present .ico-new {
+    width: 50px;
+    height: 57px;
+  }
+}
+
+.is-home__present #num2 {
+  display: block;
+}
