@@ -1,25 +1,5 @@
-$(function () {
-  $('.is-home__useful .ico').each(function (i) {
-    $(this).attr('id', 'num' + (i + 1));
-  });
-});
-
-$(function () {
-  $('.is-home__present .ico-new').each(function (i) {
-    $(this).attr('id', 'num' + (i + 1));
-  });
-});
-
-$(function () {
-  do {
-    $(".is-home__message ul").children("div.article:lt(4)").wrapAll('<li></li>')
-  } while ($(".is-home__message ul").children("div.article").length);
-  do {
-    $(".is-home__present ul").children("div.article:lt(4)").wrapAll('<li></li>')
-  } while ($(".is-home__present ul").children("div.article").length);
-});
-
-const apiURL4 = "https://api.gakumado.mynavi.jp/api/gmd/article_bases?tags[]=新入生完全マニュアル2025ガクラボとは"
+$(document).ready(function() {
+  const apiURL4 = "https://api.gakumado.mynavi.jp/api/gmd/article_bases?tags[]=新入生完全マニュアル2025ガクラボとは"
 
 $.getJSON(apiURL4)
   .done(function (data) {
@@ -79,6 +59,39 @@ $.getJSON(apiURL2)
 
     console.log('fetch api');
     $('.is-home__present ul').html(articles);
+
+    $('.is-home__present .ico-new').each(function (i) {
+      $(this).attr('id', 'num' + (i + 1));
+    });
+
+    do {
+      $(".is-home__present ul").children("div.article:lt(4)").wrapAll('<li></li>')
+    } while ($(".is-home__present ul").children("div.article").length);
+
+    $('.is-home__present ul').slick({
+      autoplay: true,
+      dots: false,
+      autoplaySpeed: 4000,
+      swipeToSlide: true,
+      slidesToShow: 1,
+      arrows: true,
+      centerMode: true, 
+      centerPadding: '14vw', 
+      focusOnSelect: true,
+      prevArrow: '<div class="slide-arrow prev-arrow"><img src="./assets/img/common/ico-arrow-left.png"/></div>',
+      nextArrow: '<div class="slide-arrow next-arrow"><img src="./assets/img/common/ico-arrow-right.png"/></div>',
+      responsive: [{
+    
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          infinite: true,
+          centerMode: true,
+          centerPadding: '8vw'
+        },
+        
+      }]
+    })
   })
   .fail(function (jqXHR, textStatus, errorThrown) {
     console.error('Error fetching articles:', textStatus, errorThrown);
@@ -111,6 +124,38 @@ $.getJSON(apiURL3)
 
     console.log('fetch api message');
     $('.is-home__message ul').html(articles);
+
+    do {
+      $(".is-home__message ul").children("div.article:lt(4)").wrapAll('<li></li>')
+    } while ($(".is-home__message ul").children("div.article").length);
+
+    $('.is-home__message ul').slick({
+      autoplay: true,
+      dots: false,
+      autoplaySpeed: 4000,
+      swipeToSlide: true,
+      slidesToShow: 1,
+      arrows: true,
+      centerMode: true, 
+      centerPadding: '14vw', 
+      focusOnSelect: true,
+      prevArrow: '<div class="slide-arrow prev-arrow"><img src="./assets/img/common/ico-arrow-left.png"/></div>',
+      nextArrow: '<div class="slide-arrow next-arrow"><img src="./assets/img/common/ico-arrow-right.png"/></div>',
+      responsive: [{
+    
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          infinite: true,
+          centerMode: true,
+          centerPadding: '8vw'
+        },
+        
+      }]
+    })
+
+
+  
   })
   .fail(function (jqXHR, textStatus, errorThrown) {
     console.error('Error fetching articles:', textStatus, errorThrown);
@@ -144,7 +189,39 @@ $.getJSON(apiURL)
     });
 
     $(".is-home__useful ul").html(articles);
+
+    $('.is-home__useful .ico').each(function (i) {
+      $(this).attr('id', 'num' + (i + 1));
+    });
+
+    $('.is-home__useful ul').slick({
+      autoplay: true,
+      dots: true,
+      autoplaySpeed: 4000,
+      swipeToSlide: true,
+      slidesToShow: 1,
+      arrows: true,
+      centerMode: true, 
+      centerPadding: '26vw', 
+      focusOnSelect: true,
+      prevArrow: '<div class="slide-arrow prev-arrow"><img src="./assets/img/common/ico-arrow-left.png"/></div>',
+      nextArrow: '<div class="slide-arrow next-arrow"><img src="./assets/img/common/ico-arrow-right.png"/></div>',
+      responsive: [{
+    
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          infinite: true,
+          centerMode: true,
+          centerPadding: '11vw'
+        },
+    
+      }]
+    });
   })
   .fail(function (jqXHR, textStatus, errorThrown) {
     console.error('Error fetching articles from apiURL:', textStatus, errorThrown);
   });
+
+})
+
