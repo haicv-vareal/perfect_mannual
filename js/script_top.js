@@ -49,15 +49,11 @@ $.getJSON(apiURL2)
               </div>
             </div>
             <h3>${article.title}</h3>
-            <p>大学生が気になる〇〇試してみた！
-              <br>～OPPO Band 2～
-            </p>
           </a>
         </div>
       `;
     });
 
-    console.log('fetch api');
     $('.is-home__present ul').html(articles);
 
     $('.is-home__present .ico-new').each(function (i) {
@@ -122,7 +118,6 @@ $.getJSON(apiURL3)
         `;
     });
 
-    console.log('fetch api message');
     $('.is-home__message ul').html(articles);
 
     do {
@@ -150,12 +145,8 @@ $.getJSON(apiURL3)
           centerMode: true,
           centerPadding: '8vw'
         },
-        
       }]
     })
-
-
-  
   })
   .fail(function (jqXHR, textStatus, errorThrown) {
     console.error('Error fetching articles:', textStatus, errorThrown);
