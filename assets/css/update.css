@@ -20,17 +20,6 @@
   display: none;
 }
 
-.is-home__useful #num2:before { 
-  display: block;
-  content: 'クーポン';
-}
-
-.is-home__useful #num1:before { 
-  display: block;
-  content: 'PC企画';
-}
-
-
 /*===========================
  プレゼント＆クーポン
 ============================ */
