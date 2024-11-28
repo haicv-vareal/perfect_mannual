@@ -37,11 +37,16 @@ $.getJSON(apiURL2)
     const shuffledArticles = data.sort(() => 0.5 - Math.random());
 
     let articles = '';
+    const now = new Date('2022-11-09T00:00:00+09:00');
     shuffledArticles.forEach(function (article, index) {
       if (index >= 8) return;
+
+      const publishedAt = new Date(article.published_at);
+      const isNew = (now - publishedAt) / (1000 * 60 * 60 * 24) <= 7;
+
       articles += `
         <div class="article">
-          <p class="ico-new"></p>
+          ${isNew ? '<p class="ico-new"></p>' : ''}
           <a href="https://gakumado.mynavi.jp/gmd/articles/${article.id}">
             <div class="is-home__present-img">
               <div class="img-inner">
