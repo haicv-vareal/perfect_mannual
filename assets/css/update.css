@@ -20,17 +20,6 @@
   display: none;
 }
 
-.is-home__useful #num2:before { 
-  display: block;
-  content: 'クーポン';
-}
-
-.is-home__useful #num1:before { 
-  display: block;
-  content: 'PC企画';
-}
-
-
 /*===========================
  プレゼント＆クーポン
 ============================ */
@@ -43,7 +32,6 @@
   background: url("../img/common/icon-new-1.png") no-repeat;
   background-size: 100% auto;
   z-index: 11;
-  display: none;
 }
 
 @media screen and (max-width: 768px) {
@@ -59,8 +47,4 @@
     width: 50px;
     height: 57px;
   }
-}
-
-.is-home__present #num2 {
-  display: block;
 }
